@@ -1,4 +1,3 @@
-
 # MakersBnB Node Seed Codebase
 
 So you want to do MakersBnB in NodeJS! Great to hear. You'll learn a lot about
@@ -138,9 +137,9 @@ Model-View-ViewModel (MVVM) architecture.
 This project doesn't use MVVM, it uses MVC and you can identify the following
 MVC components:
 
-* The Models in `/models`.
-* The Controllers in `/routes`.
-* The Views in `/views`.
+- The Models in `/models`.
+- The Controllers in `/routes`.
+- The Views in `/views`.
 
 If you feel confident and you'd like to try grow the architecture into another
 form like MVVM, do consider this your challenge!
