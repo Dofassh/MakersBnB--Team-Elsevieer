@@ -34,7 +34,7 @@
     </script>
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container">
       <h1><%= title %></h1>
       <p>Welcome to <%= title %></p>
       <p>There are <%= userCount %> users signed up.</p>
@@ -82,6 +82,70 @@
           </div>
         </form>
       </div>
-    </div>
+    </div> -->
+    <nav>
+      <div class="nav-wrapper"></div>
+        <a href="#" class="brand-logo center">MakersBnB</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="sass.html">Sign Up</a></li>
+          <li><a href="badges.html">Rooms</a></li>
+          <li><a href="collapsible.html">Past Rooms</a></li>
+        </ul>
+      </div>
+     </nav>
+        <div class="container">
+          <h1><%= title %></h1>
+          <p>Welcome to <%= title %></p>
+          <p>There are <%= userCount %> users signed up.</p>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="username" type="text" />
+                  <label for="username">User Name</label>
+                  <i class="material-icons">person</i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate" />
+                  <label for="email">Email</label>
+                  <i class="material-icons">mail_outline</i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="birthday" type="date" class="validate" />
+                  <label for="birthday">Birthday</label>
+                  <i class="material-icons">cake</i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate" />
+                  <label for="password">Password</label>
+                  <i class="material-icons">security</i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field inline">
+                    <button
+                      class="btn waves-effect waves-light"
+                      type="submit"
+                      name="action"
+                      id="submit"
+                    >
+                      Submit
+                      <i class="material-icons right">send</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <script>
+            </script>
+          </div>
+        </div>
   </body>
 </html>
