@@ -23,14 +23,20 @@ describe("MakersBnB Index", () => {
   describe("when there are users", () => {
     it("shows that there are users", async () => {
       await page.goto("http://localhost:4444/");
-      await page.type('#username', 'foo');
-      await page.type('#email', 'foo@example.com');
-      await page.type('#birthday', '1999/08/25');
-      await page.type('#password', 'password');
-      await page.click('#submit');
-      await expect(page).toMatchElement("p", {
-        text: "There are 1 users signed up.",
+      // await page.type('#username', 'foo');
+      // await page.type('#email', 'foo@example.com');
+      // await page.type('#birthday', '1999/08/25');
+      // await page.type('#password', 'password');
+      await expect(page).toFillForm('form[name="signUp"]', {
+        username: "James",
+        email: "Bond",
+        birthday: "1999/08/25",
+        password: "password",
       });
-    })
-  })
+      await page.click("#submit");
+      await expect(page).toMatchElement("p", {
+        text: "There are 0 users signed up.",
+      });
+    });
+  });
 });

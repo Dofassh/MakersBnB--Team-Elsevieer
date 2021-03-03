@@ -98,31 +98,31 @@
           <p>Welcome to <%= title %></p>
           <p>There are <%= userCount %> users signed up.</p>
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" name="signUp">
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="username" type="text" />
+                  <input id="username" type="text" name="username"/>
                   <label for="username">User Name</label>
                   <i class="material-icons">person</i>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" type="email" class="validate" />
+                  <input id="email" type="email" class="validate" name="email" />
                   <label for="email">Email</label>
                   <i class="material-icons">mail_outline</i>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="birthday" type="date" class="validate" />
+                  <input id="birthday" type="date" class="validate" name="birthday" />
                   <label for="birthday">Birthday</label>
                   <i class="material-icons">cake</i>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="password" type="password" class="validate" />
+                  <input id="password" type="password" class="validate" name="password"/>
                   <label for="password">Password</label>
                   <i class="material-icons">security</i>
                 </div>
