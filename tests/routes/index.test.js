@@ -25,10 +25,11 @@ describe("MakersBnB Index", () => {
       await page.goto("http://localhost:4444/");
       await page.type('#username', 'foo');
       await page.type('#email', 'foo@example.com');
+      await page.type('#birthday', '1999/08/25');
       await page.type('#password', 'password');
       await page.click('#submit');
       await expect(page).toMatchElement("p", {
-        text: "There are #{userCount} users signed up.",
+        text: "There are 1 users signed up.",
       });
     })
   })
