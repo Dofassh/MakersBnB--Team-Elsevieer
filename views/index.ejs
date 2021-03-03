@@ -11,10 +11,27 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script>
+      $(document).ready(function(){
+        var usernamedb, emaildb, birthdaydb, passworddb;
+        $("#submit").click(function(){
+          usernamedb = $("#username").val();
+          emaildb = $("#email").val();
+          birthdaydb = $("#birthday").val();
+          passworddb = $("#password").val();
+          $.post("http://localhost:3000",{username: usernamedb,email: emaildb,birthday: birthdaydb,password: passworddb}, function(data){
+            if(data === 'yes'){
+              alert("login success");
+            }
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="container">
@@ -22,9 +39,9 @@
       <p>Welcome to <%= title %></p>
       <p>There are <%= userCount %> users signed up.</p>
       <div class="row">
-        <form class="col s12" action="/" method="POST">
+        <form class="col s12" >
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12" >
               <input id="username" type="text" />
               <label for="username">User Name</label>
             </div>
