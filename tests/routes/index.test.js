@@ -20,7 +20,7 @@ describe("MakersBnB Index", () => {
       });
     });
   });
-  
+
   describe("when there are users", () => {
     it("shows that there are users", async () => {
       await page.goto("http://localhost:4444/");
@@ -28,12 +28,11 @@ describe("MakersBnB Index", () => {
         username: "James",
         email: "james@gmail.com",
         birthday: "08/25/1999",
-        password: "password"
+        password: "password",
       });
       await page.click("#submit");
-       await expect(page).toMatchElement("p", {
-         text: "There are 1 users signed up.",
-       });
+      await page.screenshot({ path: "tmp/screenshot.png", fullPage: true });
+      await expect(page).toMatch("There are 1 users signed up.");
     });
   });
 });

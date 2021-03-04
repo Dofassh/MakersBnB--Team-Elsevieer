@@ -6,6 +6,7 @@
     "start": "NODE_ENV=dev node ./bin/www",
     "start-test-server": "PORT=4444 node ./bin/www",
     "migrate-database": "NODE_ENV=dev node ./bin/migrate-database.js",
+    "migrate-database-test": "NODE_ENV=test node ./bin/migrate-database.js",
     "test": "jest",
     "lint": "prettier --write ."
   },
