@@ -1,5 +1,5 @@
 var express = require("express");
-var { User } = require("../database");
+var { User } = require("../database-test");
 var router = express.Router();
 var bodyParser = require('body-parser');
 const app = express();
@@ -44,4 +44,3 @@ router.post('/', (req, res) => {
 });
 
 module.exports = router;
-

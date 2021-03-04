@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require("sequelize");
 var { User, userFields } = require("./models/user.js");
-process.env.NODE_ENV = "dev"
+process.env.NODE_ENV = "test"
 console.log("sqlite:db/database." + process.env.NODE_ENV + ".db")
 const database = new Sequelize(
   "sqlite:db/database." + process.env.NODE_ENV + ".db",
