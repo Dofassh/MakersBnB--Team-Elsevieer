@@ -9,7 +9,7 @@ describe("MakersBnB Index", () => {
 
   it("welcomes the visitor", async () => {
     await page.goto("http://localhost:4444/");
-    await expect(page).toMatchElement("h5", { text: "Welcome to MakersBnB" });
+    await expect(page).toMatchElement("h1", { text: "Welcome to MakersBnB!" });
   });
 
   describe("when there are no users", () => {

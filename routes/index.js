@@ -2,12 +2,11 @@ var express = require("express");
 var { User } = require("../database");
 var router = express.Router();
 var bodyParser = require("body-parser");
-//const app = express();
+
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
-// Line below allows use of res.body in line 23
-//router.use(express.json())
+
 /* GET home page. */
 
 router.get("/", async function (req, res, next) {

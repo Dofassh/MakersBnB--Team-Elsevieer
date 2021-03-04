@@ -27,10 +27,20 @@
         </ul>
       </div>
     </nav> -->
+    <nav>
+      <div class="nav-wrapper teal accent-4">
+        <a href="#" class="brand-logo"><%= title %></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="collapsible.html" class="login">Login</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
-      <h1 class="text-center"><%= title %></h1>
-      <h5>Welcome to <%= title %></h5>
-      <p id="count">There are <%= userCount %> users signed up.</p>
+      <!-- <h1 class="text-center"><%= title %></h1> -->
+      <div class="welcome">
+        <h1>Welcome to <%= title %>!</h1>
+        <p id="count ">There are <%= userCount %> users signed up.</p>
+      </div>
       <div class="row">
         <form class="col s12" name="signUp" action="/" method="POST">
           <div class="row">
@@ -87,7 +97,6 @@
             </div>
           </div>
         </form>
-        <script></script>
       </div>
     </div>
   </body>
