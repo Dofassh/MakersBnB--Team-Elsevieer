@@ -9,7 +9,7 @@ describe("MakersBnB Index", () => {
 
   it("welcomes the visitor", async () => {
     await page.goto("http://localhost:4444/");
-    await expect(page).toMatchElement("p", { text: "Welcome to MakersBnB" });
+    await expect(page).toMatchElement("h5", { text: "Welcome to MakersBnB" });
   });
 
   describe("when there are no users", () => {
@@ -18,6 +18,21 @@ describe("MakersBnB Index", () => {
       await expect(page).toMatchElement("p", {
         text: "There are 0 users signed up.",
       });
+    });
+  });
+
+  describe("when there are users", () => {
+    it("shows that there are users", async () => {
+      await page.goto("http://localhost:4444/");
+      await expect(page).toFillForm('form[name="signUp"]', {
+        username: "James",
+        email: "james@gmail.com",
+        birthday: "08/25/1999",
+        password: "password",
+      });
+      await page.click("#submit");
+      await page.screenshot({ path: "tmp/screenshot.png", fullPage: true });
+      await expect(page).toMatch("There are 1 users signed up.");
     });
   });
 });
