@@ -35,4 +35,16 @@ describe("MakersBnB Index", () => {
       await expect(page).toMatch("There are 1 users signed up.");
     });
   });
+  // describe("when user attempt login", () => {
+  //   it("checks for user authenication", async () => {
+  //     // needs statement here that causes sign up process without having to copy last test
+  //     await page.goto("http://localhost:4444/sign-in");
+  //     await expect(page).toFillForm('form[name="signIn"]', {
+  //       email: "james@gmail.com",
+  //       password: "password",
+  //     });
+  //     await page.click("#submit");
+  //     // insert authenication process here
+  //   });
+  // });
 });

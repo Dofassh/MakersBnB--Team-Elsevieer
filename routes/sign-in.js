@@ -9,7 +9,7 @@ router.use(bodyParser.json());
 
 /* GET home page. */
 
-router.get("/sign-in", async function (req, res, next) {
+router.get("/sign-in", (req, res, next) => {
   res.render("sign-in", { title: "MakersBnB" });
 });
 
