@@ -31,9 +31,9 @@ describe("MakersBnB Index", () => {
         password: "password"
       });
       await page.click("#submit");
-      await expect(page).toMatchElement("#count", {
-        text: "There are 1 users signed up.",
-      });
+       await expect(page).toMatchElement("p", {
+         text: "There are 1 users signed up.",
+       });
     });
   });
 });
