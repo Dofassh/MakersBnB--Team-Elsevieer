@@ -11,28 +11,10 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <script>
-      $(document).ready(function(){
-        var usernamedb, emaildb, birthdaydb, passworddb;
-        $("#submit").click(function(e){
-          e.preventDefault();
-          usernamedb = $("#username").val();
-          emaildb = $("#email").val();
-          birthdaydb = $("#birthday").val();
-          passworddb = $("#password").val();
-          $.post(`http://localhost:${portNumber}/listing`,{username: usernamedb,email: emaildb,birthday: birthdaydb,password: passworddb}, function(data){
-            if(data === 'yes'){
-              alert("login success");
-            }
-          });
-        });
-      });
-    </script>
   </head>
   <body>
     <!-- <nav>
@@ -50,7 +32,7 @@
           <h5>Welcome to <%= title %></h5>
           <p id="count">There are <%= userCount %> users signed up.</p>
           <div class="row">
-            <form class="col s12" name="signUp">
+            <form class="col s12" name="signUp" action="/" method="POST">
               <div class="row">
                 <div class="input-field col s12">
                   <input id="username" type="text" name="username"/>

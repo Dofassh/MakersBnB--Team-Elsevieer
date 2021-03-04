@@ -13,27 +13,22 @@ app.use(bodyParser.json());
 
 router.get("/", async function (req, res, next) {
   var userCount = await User.count();
-  var portNumber = process.env.PORT
   console.log(portNumber);
-  res.render("index", { title: "MakersBnB", userCount, portNumber });
+  res.render("index", { title: "MakersBnB", userCount });
 });
 
-router.post('/listing', (req, res) => {
-  var usernamef = req.body.username;
-  var emailf = req.body.email;
-  var birthdayf = req.body.birthday;
-  var passwordf = req.body.password;
-  console.log(usernamef);
-  console.log('before create user')
-  const user = User.create({ username: usernamef, email: emailf, birthday: birthdayf, password: passwordf})
-  console.log(user);
-  res.render("listing", { username: usernamef});
-  res.redirect("/listing")
+router.post('/', (req, res) => {
+  const { username, email, birthday, password } = req.body
+  console.log( req.body );
+  return User.create( { username, email, birthday, password })
+  .then((user) => res.send(user))
+  .catch((err) => {
+    console.log('***There was an error creating user', JSON.stringify(user))
+    return res.status(400).send(err)
+  })
 });
 
-//  router.get('/listing', function(req, res) {
-//    res.sendFile(path.join(__dirname+'/listing.ejs'));
-//  });
+
 
 
 module.exports = router;
