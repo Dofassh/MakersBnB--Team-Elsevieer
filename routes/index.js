@@ -11,10 +11,11 @@ router.use(bodyParser.json());
 //router.use(express.json())
 /* GET home page. */
 
-router.get("/", async function (req, res, next) {
+router.get("/", async function(req, res, next) {
   var userCount = await User.count();
   res.render("index", { title: "MakersBnB", userCount });
 });
+
 
 router.post("/", (req, res) => {
   const { username, email, birthday, password } = req.body
