@@ -5,8 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>listing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/listings.css" />
+
 </head>
 <body>
-    <h1> Hello,  <%= username %></h1>
+
+    <!-- Navbar goes here -->
+    <nav>
+        <div class="nav-wrapper teal accent-4">
+          <a href="/" class="brand-logo"><%= title %></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="javascript:history.back()" class="login">< Back</a></li>
+          </ul>
+        </div>
+      </nav>
+    <!-- Page Layout here -->
+    <!-- <div class="container"> -->
+    <div class="row" id="content">
+      
+        <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+           <h3> List a Space</h3>
+           <form name="signUp" action="/" method="POST">
+                <div class="row">
+                  <div class="input-field ">
+                    <input id="name" type="text" name="name" />
+                    <label for="name"> Name</label>
+                    <i class="material-icons">home</i>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field ">
+                    <input id="description" type="text" name="description" />
+                    <label for="description">description</label>
+                    <i class="material-icons">border_color</i>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field ">
+                      <input id="price" type="text" name="description" placeholder="£"/>
+                      <label for="description">price</label>
+                      <i class="material-icons">sell</i>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="input-field ">
+                    <input
+                      id="availableFrom"
+                      type="date"
+                      class="validate"
+                      name="availableFrom"
+                    />
+                    <label for="availableFrom"> Available from </label>
+                    <i class="material-icons">date_range</i>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field ">
+                      <input
+                        id="availableTo"
+                        type="date"
+                        class="validate"
+                        name="availableTo"
+                      />
+                      <label for="availableTo"> Available To </label>
+                      <i class="material-icons">date_range</i>
+                    </div>
+                  </div>
+                
+                <div class="row">
+                  <div class="col s12">
+                    <div class="input-field inline">
+                      <button
+                        class="btn waves-effect waves-light"
+                        type="submit"
+                        name="action"
+                        id="submit"
+                      >
+                        List my Space
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+        </div>
+  
+        <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+          <h3 class="center-align"> All the listings </h3>
+  
+        </div>
+  
+      </div>
+    <!-- </div> -->
+            
 </body>
 </html>

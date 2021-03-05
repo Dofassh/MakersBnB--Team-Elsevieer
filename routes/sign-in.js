@@ -12,16 +12,24 @@ router.get("/", (req, res, next) => {
   res.render("sign-in", { title: "MakersBnB" });
 });
 
-router.post("/", (req, res) => {
+router.post("/", async function (req, res) {
   const { email, password } = req.body;
   console.log(req.body);
-  const user = User.findAll({ email, password })
-    // add authentication functionality here
-    .then((user) => res.redirect("/"))
-    .catch((err) => {
-      console.log("***There was an error finding user", JSON.stringify(user));
-      return res.status(400).send(err);
-    });
+  
+  const user = await User.findOne({ where: { email: email, password: password } });
+    if (!user){
+      res.redirect('/sign-in');
+    } else {
+      res.redirect('/listing');
+    }
+  console.log(user);
+  // const user = User.findAll({ email, password })
+  //   // add authentication functionality here
+  //   .then((user) => res.redirect("/"))
+  //   .catch((err) => {
+  //     console.log("***There was an error finding user", JSON.stringify(user));
+  //     return res.status(400).send(err);
+  //   });
 });
 
 module.exports = router;

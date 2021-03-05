@@ -7,7 +7,7 @@ const app = express();
 
 router.get("/", async function (req, res, next) {
     //var userCount = await User.count();
-    res.render("listing");
+    res.render("listing", { title: "MakersBnB" });
 });
 
 
