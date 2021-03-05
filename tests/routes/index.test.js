@@ -32,7 +32,7 @@ describe("MakersBnB Index", () => {
       });
       await page.click("#submit");
       await page.screenshot({ path: "tmp/screenshot.png", fullPage: true });
-      await expect(page).toMatch("There are 1 users signed up.");
+      await expect(page).toMatch("Please sign in.");
     });
   });
   // describe("when user attempt login", () => {
