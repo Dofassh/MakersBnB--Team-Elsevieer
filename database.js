@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require("sequelize");
 var { User, userFields } = require("./models/user.js");
-
+var { Listing, listingFields } = require("./models/listing.js");
 
 const database = new Sequelize(
   "sqlite:db/database." + process.env.NODE_ENV + ".db",
@@ -11,5 +11,6 @@ const database = new Sequelize(
 );
 
 User.init(userFields, { sequelize: database, modelName: "user" });
+Listing.init(listingFields, { sequelize: database, modelName: "listing" });
 
-module.exports = { User, database };
+module.exports = { User, Listing, database };

@@ -31,20 +31,21 @@ describe("MakersBnB Index", () => {
         password: "password",
       });
       await page.click("#submit");
-      await page.screenshot({ path: "tmp/screenshot.png", fullPage: true });
+      //await page.screenshot({ path: "tmp/screenshot.png", fullPage: true });
       await expect(page).toMatch("Please sign in.");
     });
   });
-  // describe("when user attempt login", () => {
-  //   it("checks for user authenication", async () => {
-  //     // needs statement here that causes sign up process without having to copy last test
-  //     await page.goto("http://localhost:4444/sign-in");
-  //     await expect(page).toFillForm('form[name="signIn"]', {
-  //       email: "james@gmail.com",
-  //       password: "password",
-  //     });
-  //     await page.click("#submit");
-  //     // insert authenication process here
-  //   });
-  // });
+  describe("when user attempt login", () => {
+    it("checks for user authenication", async () => {
+      // needs statement here that causes sign up process without having to copy last test
+      await page.goto("http://localhost:4444/sign-in");
+      await expect(page).toFillForm('form[name="signIn"]', {
+        email: "james@gmail.com",
+        password: "password",
+      });
+      await page.click("#submit");
+      await expect(page).toMatch("List a Space");
+      // insert authenication process here
+    });
+  });
 });
