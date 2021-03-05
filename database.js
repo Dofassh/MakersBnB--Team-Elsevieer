@@ -14,3 +14,4 @@ User.init(userFields, { sequelize: database, modelName: "user" });
 Listing.init(listingFields, { sequelize: database, modelName: "listing" });
 
 module.exports = { User, Listing, database };
+
